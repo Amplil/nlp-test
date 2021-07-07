@@ -1,5 +1,12 @@
-data: exp/dataset.de-en
-save_model: exp/model.de-en
+data:
+    corpus_1:
+        path_src: toy-ende/src-train.txt
+        path_tgt: toy-ende/tgt-train.txt
+    valid:
+        path_src: toy-ende/src-val.txt
+        path_tgt: toy-ende/tgt-val.txt
+
+save_model: toy-ende/run/model
 save_checkpoint_steps: 10000
 keep_checkpoint: 10
 seed: 3435
