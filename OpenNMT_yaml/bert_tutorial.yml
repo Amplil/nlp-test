@@ -1,0 +1,44 @@
+# preprocess_bert.py
+task: classification
+corpus_type: '{'train', 'valid'}'
+file_type txt: [--delimiter ' ||| ']
+data DIR_BASE/LABEL_1/FILENAME1: ... DIR_BASE/LABEL_N/FILENAME2
+save_data: dataset
+vocab_model: {bert-base-uncased,...}
+max_seq_len: 256
+do_lower_case: true
+sort_label_vocab: true
+do_shuffle: true
+
+# python train.py
+is_bert: true
+task_type: '{pretraining, classification, tagging}'
+data: PREPROCESSED_DATAIFILE
+train_from: CONVERTED_CHECKPOINT.pt [--param_init 0.1]
+save_model: MODEL_PREFIX
+save_checkpoint_steps: 1000
+world_size: 2
+gpu_ranks: 0 1
+word_vec_size: 768
+rnn_size: 768
+layers: 12
+heads: 8
+transformer_ff: 3072
+activation: gelu
+dropout: 0.1
+average_decay: 0.0001
+batch_size: 8
+accum_count: 4
+optim: bertadam
+max_grad_norm: 0
+learning_rate: 2e-5
+learning_rate_decay: 0.99
+decay_method: linear
+train_steps: 4000
+valid_steps: 200
+warmup_steps: 40
+report_every: 10
+seed: 3435
+tensorboard: true
+tensorboard_log_dir: LOGDIR
+

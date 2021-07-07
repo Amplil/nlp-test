@@ -1,0 +1,14 @@
+# 「OpenNMT-py (PyTorch) をGoogle Colabで実行する。」を参考にしたyaml
+
+# OpenNMT-py/preprocess.py
+train_src: /content/OpenNMT-py/data/src-train.txt
+train_tgt: /content/OpenNMT-py/data/tgt-train.txt
+valid_src: /content/OpenNMT-py/data/src-val.txt
+valid_tgt: /content/OpenNMT-py/data/tgt-val.txt
+save_data: /content/OpenNMT-py/data/demo
+
+# OpenNMT-py/train.py
+gpu_ranks: 0
+train_steps: 10000
+save_model: /content/OpenNMT-py/data/data-model
+data: /content/OpenNMT-py/data/demo
