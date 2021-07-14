@@ -1,3 +1,6 @@
+# https://forum.opennmt.net/t/opennmt-py-bert-tutorial/3015
+# 機械翻訳タスクでない？
+
 # preprocess_bert.py
 task: classification
 corpus_type: '{'train', 'valid'}'

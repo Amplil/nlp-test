@@ -18,8 +18,10 @@ save_model: toy-ende/run/model
 save_checkpoint_steps: 10000
 keep_checkpoint: 10
 seed: 3435
-train_steps: 500000
-valid_steps: 10000
+#train_steps: 500000
+#valid_steps: 10000
+train_steps: 1000
+valid_steps: 500
 warmup_steps: 8000
 report_every: 100
 
