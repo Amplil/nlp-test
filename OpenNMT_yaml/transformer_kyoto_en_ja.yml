@@ -1,0 +1,47 @@
+## Where the samples will be written
+save_data: data/kftt-data-1.0/run/example
+## Where the vocab(s) will be written
+src_vocab: data/kftt-data-1.0/run/example.vocab.src
+tgt_vocab: data/kftt-data-1.0/run/example.vocab.tgt
+# Prevent overwriting existing files in the folder
+overwrite: False
+
+# OpenNMT-py/preprocess.py
+data:
+    corpus_1:
+        path_src: data/kftt-data-1.0/data/tok/kyoto-train.en
+        path_tgt: data/kftt-data-1.0/data/tok/kyoto-train.ja
+    valid:
+        path_src: data/kftt-data-1.0/data/tok/kyoto-dev.en
+        path_tgt: data/kftt-data-1.0/data/tok/kyoto-dev.ja
+
+# OpenNMT-py/train.py
+save_model: toy-ende/run/model
+layers: 6
+rnn_size: 512
+word_vec_size: 512
+transformer_ff: 2048
+heads: 8
+encoder_type: transformer
+decoder_type: transformer
+position_encoding: 'true'
+train_steps: 200000
+max_generator_batches: 2
+dropout: 0.1
+batch_size: 4096
+batch_type: tokens
+normalization: tokens
+accum_count: 2
+optim: adam
+adam_beta2: 0.998
+decay_method: noam
+warmup_steps: 8000
+learning_rate: 2
+max_grad_norm: 0
+param_init: 0
+param_init_glorot: 'true'
+label_smoothing: 0.1
+valid_steps: 10000
+save_checkpoint_steps: 40000
+world_size: 1
+gpu_ranks: 0 
