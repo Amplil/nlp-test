@@ -16,7 +16,7 @@ data:
         path_tgt: data/kftt-data-1.0/data/tok/kyoto-dev.ja
 
 # OpenNMT-py/train.py
-save_model: toy-ende/run/model
+save_model: data/kftt-data-1.0/run/model
 layers: 6
 rnn_size: 512
 word_vec_size: 512
@@ -25,7 +25,8 @@ heads: 8
 encoder_type: transformer
 decoder_type: transformer
 position_encoding: 'true'
-train_steps: 200000
+#train_steps: 200000
+train_steps: 10000
 max_generator_batches: 2
 dropout: 0.1
 batch_size: 4096
@@ -41,7 +42,8 @@ max_grad_norm: 0
 param_init: 0
 param_init_glorot: 'true'
 label_smoothing: 0.1
-valid_steps: 10000
+#valid_steps: 10000
+valid_steps: 5000
 save_checkpoint_steps: 40000
 world_size: 1
 gpu_ranks: 0 
