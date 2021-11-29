@@ -25,11 +25,13 @@ heads: 8
 encoder_type: transformer
 decoder_type: transformer
 position_encoding: 'true'
-#train_steps: 200000
-train_steps: 15000
-max_generator_batches: 2
+train_steps: 200000 # default
+#train_steps: 15000
+max_generator_batches: 2 # default
+#max_generator_batches: 64
 dropout: 0.1
-batch_size: 4096
+#batch_size: 4096 # default
+batch_size: 1024
 batch_type: tokens
 normalization: tokens
 accum_count: 2
@@ -42,8 +44,9 @@ max_grad_norm: 0
 param_init: 0
 param_init_glorot: 'true'
 label_smoothing: 0.1
-#valid_steps: 10000
-valid_steps: 5000
-save_checkpoint_steps: 40000
+valid_steps: 10000 # default
+#valid_steps: 5000
+#save_checkpoint_steps: 40000
+save_checkpoint_steps: 10000 # default
 world_size: 1
 gpu_ranks: 0 
