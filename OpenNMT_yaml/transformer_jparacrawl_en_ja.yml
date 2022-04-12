@@ -9,12 +9,13 @@ overwrite: False
 # OpenNMT-py/preprocess.py
 data:
     corpus_1:
-        path_src: data/JParaCrawl/en.txt
+        path_src: data/JParaCrawl/en.txt.atok
         #path_tgt: data/JParaCrawl/ja.txt
-        path_tgt: data/JParaCrawl/ja-tok.txt
-    valid: # kfttを使う
-        path_src: data/kftt-data-1.0/data/tok/kyoto-dev.en
-        path_tgt: data/kftt-data-1.0/data/tok/kyoto-dev.ja
+        #path_tgt: data/JParaCrawl/ja-tok.txt
+        path_tgt: data/JParaCrawl/ja.txt.atok
+    valid: # sentencepieceでトークナイズしたkfttを使う
+        path_src: data/JParaCrawl/kyoto-dev.en.atok
+        path_tgt: data/JParaCrawl/kyoto-dev.ja.atok
 
 # OpenNMT-py/train.py
 save_model: data/JParaCrawl/run/model
